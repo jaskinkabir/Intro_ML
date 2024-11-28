@@ -16,8 +16,9 @@
 
 \section{Housing Price Regression}
 \begin{enumerate}[label=\alph*. ]
-    \item \textit{Single Layer Neural Network}
-        \\ Using  a single hidden layer of 8 neurons, the model was able to achieve a validation loss of $2.02 \times 10^6$ after 5000 epochs. Training took 5.6 seconds. The model's training and validation loss curves can be seen in Figure \ref{fig:P1a}.
+    \item \textbf{Single Layer Neural Network}
+    
+        Using  a single hidden layer of 8 neurons, the model was able to achieve a validation loss of $2.02 \times 10^6$ after 5000 epochs. Training took 5.6 seconds. The model's training and validation loss curves can be seen in Figure \ref{fig:P1a}.
 
     \begin{figure}[htbp]
         \centering
@@ -28,8 +29,9 @@
 
     This performed significantly better than the linear regression model from Homework 2, which was only able to achieve a loss of $5.78 \times 10^{11}$ after 5000 epochs.
 
-    \item \textit{Triple Layer Neural Network}
-        By increasing the number of hidden layers to 3, the model was able to achieve a validation loss of $1.88 \times 10^6$ after 5000 epochs. This is a small increase in performance over the single layer network. Training took 7.8 seconds. The model's training and validation loss curves can be seen in Figure \ref{fig:P1b}.
+    \item \textbf{Triple Layer Neural Network}
+        
+    By increasing the number of hidden layers to 3, the model was able to achieve a validation loss of $1.88 \times 10^6$ after 5000 epochs. This is a small increase in performance over the single layer network. Training took 7.8 seconds. The model's training and validation loss curves can be seen in Figure \ref{fig:P1b}.
 
         \begin{figure}[htbp]
             \centering
@@ -37,7 +39,7 @@
             \caption{P1b: Triple Layer Neural Network Loss Curves}
             \label{fig:P1b}
         \end{figure}
-        Looking closely at this graph, the training loss is lower than the validation loss, which indicates that overfit did occur in this model. This is likely due to the increased complexity of the model, which allows it to fit the training data more closely. 
+        Looking closely at this graph, the training loss is lower than the validation loss, which indicates that overfit did occur in this model.
 \end{enumerate}
 
 \section{Breast Cancer Classification}
@@ -68,13 +70,14 @@
 \section{CIFAR-10 Classification}
 \begin{enumerate}[label=\alph*. ]
     \item{\textbf{Single Layer Classifier}}
-    Using a single hidden layer of 256 neurons, the model was able to achieve a training loss of $ \times 10^{}$, validation loss of $ \times 10^{}$, and an accuracy of . The training process of 100 epochs took .
+    
+    Using a single hidden layer of 256 neurons, the model was able to achieve a training loss of $1.86$, validation loss of $1.99$, and an accuracy of 47.4\% The training process of 100 epochs took 22 minutes and 50 seconds.
 
     \item{\textbf{Triple Layer Classifier}}
     
-    By increasing the number of hidden layers to 3, the model was able to achieve a training loss of $ \times 10^{}$, validation loss of $ \times 10^{}$, and an accuracy of . The training process of 100 epochs took .
+    By increasing the number of hidden layers to 3, the model was able to achieve a training loss of $1.73$, validation loss of $2.00$, and an accuracy of 45.32\%. The training process of 100 epochs took 23 minutes and 16 seconds.
     
-    The triple layer model outperformed the single layer model. However, its validation loss exceeded the training loss, which indicates that overfit did occur.
+    Surprisingly the triple layer model was outperformed by the single layer model. This is likely due to the increased complexity of the model leading to overfit, which can be seen in the significant improvement in training loss from the single layer to the triple layer model.
 \end{enumerate}
 
 \end{document}
