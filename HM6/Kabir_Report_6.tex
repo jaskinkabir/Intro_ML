@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{minted}
+ \usepackage{url}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
+\begin{document}
+\input{title.tex}
+
+\section{Housing Price Regression}
+\begin{enumerate}[label=\alph*. ]
+    \item \textit{Single Layer Neural Network}
+        \\ Using  a single hidden layer of 8 neurons, the model was able to achieve a validation loss of $2.02 \times 10^6$ after 5000 epochs. Training took 5.6 seconds. The model's training and validation loss curves can be seen in Figure \ref{fig:P1a}.
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/img1.png}
+        \caption{P1a: Single Layer Neural Network Loss Curves}
+        \label{fig:P1a}
+    \end{figure}
+
+    This performed significantly better than the linear regression model from Homework 2, which was only able to achieve a loss of $5.78 \times 10^{11}$ after 5000 epochs.
+
+    \item \textit{Triple Layer Neural Network}
+        By increasing the number of hidden layers to 3, the model was able to achieve a validation loss of $1.88 \times 10^6$ after 5000 epochs. This is a small increase in performance over the single layer network. Training took 7.8 seconds. The model's training and validation loss curves can be seen in Figure \ref{fig:P1b}.
+
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/img2.png}
+            \caption{P1b: Triple Layer Neural Network Loss Curves}
+            \label{fig:P1b}
+        \end{figure}
+        Looking closely at this graph, the training loss is lower than the validation loss, which indicates that overfit did occur in this model. This is likely due to the increased complexity of the model, which allows it to fit the training data more closely. 
+\end{enumerate}
+
+\section{Breast Cancer Classification}
+    Using a single hidden layer of 32 neurons, the model was able to achieve a training loss of $7.98 \times 10^{-4}$ after 5000 epochs. Training took 4.5 seconds.
+
+    By increasing the number of hidden layers to three, the training loss was reduced to $7.98 \times 10^{-4}$, while keeping roughly the same training time of 4.4 seconds. A comparison of these two models against the Logistic and SVM Classical models can be seen in Table \ref{tab:P2}
+
+    \begin{table}[htbp] 
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            & \textbf{Single Layer} & \textbf{Triple Layer} & \textbf{Logistic} & \textbf{SVM} \\
+            \hline
+            \textbf{Accuracy} & 0.97 & 0.98 & 0.96 & 0.98 \\
+            \hline
+            \textbf{Precision} & 0.97 & 0.98 & 0.96 & 0.97 \\
+            \hline
+            \textbf{Recall} & 0.97 & 0.98 & 0.99 & 1.00 \\
+            \hline
+            \textbf{F1 Score} & 0.97 & 0.98 & 0.97 & 0.99 \\
+            \hline
+        \end{tabular}
+        \caption{Breast Cancer Classifier Comparison}
+        \label{tab:P2}
+    \end{table}
+    The triple layer classifier network outperformed the logistic classifier and was outperformed by the SVM classifier.
+
+\section{CIFAR-10 Classification}
+\begin{enumerate}[label=\alph*. ]
+    \item{\textbf{Single Layer Classifier}}
+    Using a single hidden layer of 256 neurons, the model was able to achieve a training loss of $ \times 10^{}$, validation loss of $ \times 10^{}$, and an accuracy of . The training process of 100 epochs took .
+
+    \item{\textbf{Triple Layer Classifier}}
+    
+    By increasing the number of hidden layers to 3, the model was able to achieve a training loss of $ \times 10^{}$, validation loss of $ \times 10^{}$, and an accuracy of . The training process of 100 epochs took .
+    
+    The triple layer model outperformed the single layer model. However, its validation loss exceeded the training loss, which indicates that overfit did occur.
+\end{enumerate}
+
+\end{document}
