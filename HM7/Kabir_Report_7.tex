@@ -17,7 +17,7 @@
 \section{Problem 1: Convolutional Neural Networks}
 \begin{enumerate}[label=\alph*. ]
     \item \textit{2 Convolutional Layers}
-    \item 
+    \item
      A convolutional neural network was constructed with 32 filters in the first layer and 64 filters in the second layer. The kernel size was set to 3x3 for both layers. After 200 epochs of training on the CIFAR-10 dataset, the model reached a validation accuracy of 73.8\%, and validation loss curves can be seen in Figure \ref{fig:conv_loss_a}. As can be seen in the graph, there was significant overfitting in the model.
      
      The best performing fully connected model from Homework 6 reached a validation accuracy of 47.2\%, which is 36\% lower than even this two layer convolutional model's accuracy. This demonstrates how much more effective convolutional models are at processing images than fully connected models alone. 
@@ -30,7 +30,7 @@
      \item 
      Adding a third convolutional layer to this model significantly increased the model's propensity to overfit. To handle this issue, lower learning rate and larger weight decay parameters were passed to the model's optimizer. After 200 epochs of training, the model reached a validation accuracy of 73.2\%, which is the same as the two layer model. The validation loss curves for this model can be seen in Figure \ref{fig:conv_loss_b}.
 
-     This model had a total of 159,146 parameters, which is an increase of 5.5\% over the two layer model.  Likely due to the fact that the model is still too small to fully utilize the A100 GPU, the 3 layer model only took 500 seconds to train, which is not much more than the 2 layer model's training time and the majority of training time. The reason the training time was slower at all though was due to the increased complexity of the model.     
+     This model had a total of 159,146 parameters, which is an increase of 5.5\% over the two layer model. The time it took to train this model was 495 seconds, which is 7\% longer than the two layer model. This shows that the training time is not a linear function of the number of parameters. It is possible that a larger model requires more time to load into the GPU's memory, which could explain the discrepancy in training times.
 
 \end{enumerate}
 \section{Problem 2: Residual Networks}
